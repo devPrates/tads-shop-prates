@@ -6,6 +6,7 @@ type Marca = {
   id: number;
   nome: string;
 };
+
 export default function Page() {
   let [contador, setContador] = useState(0);
   let [marcas, setMarcas] = useState([]);
@@ -22,11 +23,15 @@ export default function Page() {
   function incrementar() {
     setContador(contador + 1);
   }
+  function decrementar() {
+    setContador(contador - 1);
+  }
   return (
     <div className="p-4">
       <h1>Página Inicial</h1>
       <p className="text-4xl mb-2">Contador: {contador}</p>
       <Button onClick={incrementar}>+</Button>
+      <Button variant={"destructive"} onClick={decrementar}>-</Button>
       <div className="m-4">
         <h2>Marcas</h2>
         <ul>
