@@ -3,9 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 type Marca = {
-  id: number;
+  id:number,
   nome: string;
-};
+}
 
 export default function Page() {
   let [contador, setContador] = useState(0);
@@ -23,19 +23,15 @@ export default function Page() {
   function incrementar() {
     setContador(contador + 1);
   }
-  function decrementar() {
-    setContador(contador - 1);
-  }
   return (
     <div className="p-4">
       <h1>Página Inicial</h1>
       <p className="text-4xl mb-2">Contador: {contador}</p>
       <Button onClick={incrementar}>+</Button>
-      <Button variant={"destructive"} onClick={decrementar}>-</Button>
       <div className="m-4">
         <h2>Marcas</h2>
         <ul>
-          {marcas.map((marca: Marca) => (
+          {marcas.map((marca:Marca) => (
             <li key={marca.id}>{marca.nome}</li>
           ))}
         </ul>
